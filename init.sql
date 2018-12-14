@@ -1,8 +1,10 @@
 CREATE USER myuser;
 CREATE DATABASE postgis_test;
-create schema adm;
+GRANT ALL PRIVILEGES ON DATABASE postgis_test TO myuser;
 
-CREATE TABLE adm.user(
+CREATE SCHEMA myschema;
+
+CREATE TABLE myschema.user(
   id varchar(255) not null,
   email varchar(255),
   password varchar(255),
@@ -11,7 +13,7 @@ CREATE TABLE adm.user(
   PRIMARY KEY( id )
 );
 
-CREATE TABLE adm.wunder(
+CREATE TABLE myschema.wunder(
   id varchar(255) not null,
   title varchar(255),
   description varchar(255),
@@ -21,14 +23,12 @@ CREATE TABLE adm.wunder(
   PRIMARY KEY( id )
 );
 
-GRANT ALL PRIVILEGES ON DATABASE postgis_test TO myuser;
+grant select on myschema.user to myuser;
+grant insert on myschema.user to myuser;
+grant update on myschema.user to myuser;
+grant delete on myschema.user to myuser;
 
-grant select on adm.user to myuser;
-grant insert on adm.user to myuser;
-grant update on adm.user to myuser;
-grant delete on adm.user to myuser;
-
-grant delete on adm.wunder to myuser;
-grant select on adm.wunder to myuser;
-grant insert on adm.wunder to myuser;
-grant update on adm.wunder to myuser;
+grant delete on myschema.wunder to myuser;
+grant select on myschema.wunder to myuser;
+grant insert on myschema.wunder to myuser;
+grant update on myschema.wunder to myuser;
