@@ -6,6 +6,8 @@ CREATE SCHEMA myschema;
 
 GRANT USAGE ON SCHEMA myschema TO myuser;
 GRANT ALL ON ALL TABLES IN SCHEMA myschema TO myuser;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA myschema TO myuser;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO myuser;
 
 drop table if exists myschema.user cascade;
 
