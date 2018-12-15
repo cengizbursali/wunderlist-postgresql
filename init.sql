@@ -1,9 +1,12 @@
-CREATE USER myuser;
-CREATE DATABASE postgis_test;
-GRANT ALL PRIVILEGES ON DATABASE postgis_test TO myuser;
+CREATE DATABASE mydatabase;
+CREATE USER myuser with password 'mypass';
 
 CREATE SCHEMA myschema;
 
+GRANT USAGE ON SCHEMA myschema TO myuser;
+GRANT ALL ON ALL TABLES IN SCHEMA myschema TO myuser;
+
+drop table if exists myschema.user cascade;
 CREATE TABLE myschema.user(
   id varchar(255) not null,
   email varchar(255),
@@ -13,6 +16,7 @@ CREATE TABLE myschema.user(
   PRIMARY KEY( id )
 );
 
+drop table if exists myschema.wunder cascade;
 CREATE TABLE myschema.wunder(
   id varchar(255) not null,
   title varchar(255),
