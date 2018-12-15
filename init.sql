@@ -19,8 +19,8 @@ CREATE TABLE myschema.wunder(
   title varchar(255),
   description varchar(255),
   created_by_user varchar(255),
-  creation_time date,
-  modification_time date,
+  creation_time timestamp,
+  modification_time timestamp,
   PRIMARY KEY( id )
 );
  
