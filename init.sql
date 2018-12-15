@@ -2,12 +2,15 @@ CREATE DATABASE mydatabase;
 CREATE USER myuser with password 'mypass';
 GRANT CONNECT ON DATABASE mydatabase TO myuser;
 
-CREATE SCHEMA myschema;
 
 GRANT USAGE ON SCHEMA myschema TO myuser;
 GRANT ALL ON ALL TABLES IN SCHEMA myschema TO myuser;
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA myschema TO myuser;
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO myuser;
+
+GRANT CREATE ON DATABASE mydatabase TO myuser;
+
+CREATE SCHEMA myschema;
 
 drop table if exists myschema.user cascade;
 
