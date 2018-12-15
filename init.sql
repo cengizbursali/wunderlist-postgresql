@@ -8,6 +8,7 @@ GRANT USAGE ON SCHEMA myschema TO myuser;
 GRANT ALL ON ALL TABLES IN SCHEMA myschema TO myuser;
 
 drop table if exists myschema.user cascade;
+
 CREATE TABLE myschema.user(
   id varchar(255) not null,
   email varchar(255),
@@ -18,6 +19,7 @@ CREATE TABLE myschema.user(
 );
 
 drop table if exists myschema.wunder cascade;
+
 CREATE TABLE myschema.wunder(
   id varchar(255) not null,
   title varchar(255),
