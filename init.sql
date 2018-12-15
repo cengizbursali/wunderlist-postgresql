@@ -1,5 +1,6 @@
 CREATE DATABASE mydatabase;
 CREATE USER myuser with password 'mypass';
+GRANT CONNECT ON DATABASE mydatabase TO myuser;
 
 CREATE SCHEMA myschema;
 
